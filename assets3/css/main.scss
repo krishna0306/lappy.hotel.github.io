@@ -1,0 +1,194 @@
+$White: hsl(0, 0%, 100%);
+$LightGrey: hsl(217, 12%, 63%);
+$MediumGrey: hsl(216, 12%, 54%);
+$DarkBlue: hsl(213, 19%, 18%);
+$VeryDarkBlue: hsl(216, 12%, 8%);
+$Orange: hsl(25, 97%, 53%);
+$BackDark: hsl(217, 22%, 25%);
+$Radius: 20px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+body {
+    background: $VeryDarkBlue;
+    color: $LightGrey;
+    width: 100%;
+    height: 100vh;
+
+    .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .5s ease-out;
+
+        .card-wrapper {
+            background: $DarkBlue;
+            position: relative;
+            width: 320px;
+            height: 340px;
+            border-radius: $Radius;
+            padding: 2em 1.5em;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            transition: all .5s ease-out;
+
+            .star {
+                width: 35px;
+                height: 35px;
+                background: $BackDark;
+                display: flex;
+                padding: 5px;
+                border-radius: 50%;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 1.3em;
+
+                img {
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+
+            h2 {
+                color: $White;
+                font-size: 1.3em;
+                font-weight: normal;
+                letter-spacing: 1.5px;
+                margin-bottom: .6em;
+            }
+
+            p {
+                font-size: 12px;
+                margin-bottom: 2rem;
+            }
+
+            .star-rating {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 1.5em;
+
+                .btn {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: $Radius;
+                    border: none;
+                    outline: none;
+                    background: $BackDark;
+                    color: $MediumGrey;
+
+                    &:hover {
+                        background: $LightGrey;
+                        color: $White;
+                    }
+                    
+                    &.active {
+                        background: $Orange;
+                        color: $White;
+                    }
+                }
+            }
+
+            .btn-submit {
+                width: 100%;
+                padding: .7em 2em;
+                text-transform: uppercase;
+                font-size: .9em;
+                letter-spacing: 2px;
+                background: $Orange;
+                color: $White;
+                border: none;
+                border-radius: 30px;
+
+                &:hover {
+                    background: $White;
+                    color: $Orange;
+                }
+            }
+
+            .thankyou-icon {
+                width: 150px;
+                align-self: center;
+                margin-bottom: .5em;
+            }
+
+            .rating-selected {
+                text-align: center;
+                background: $BackDark;
+                width: 80%;
+                margin: 0 auto;
+                border-radius: $Radius;
+                margin-top: 1em;
+                margin-bottom: 1.3em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1px;
+
+                h2 {
+                    font-size: .8em;
+                    color: $Orange;
+                }
+            }
+
+            h3 {
+                text-align: center;
+                color: $White;
+                font-size: 1.5em;
+                font-weight: normal;
+                letter-spacing: 1.4px;
+                margin-bottom: .5em;
+            }
+
+            .text-thankyou {
+                text-align: center;
+            }
+
+            .close-btn {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                display: flex;
+                right: 20px;
+                top: 25px;
+                cursor: pointer;
+
+                span {
+                    position: absolute;
+                    height: 3px;
+                    width: 20px;
+                    background-color: $MediumGrey;
+
+                    &:nth-child(1) {
+                        transform: translate(0px, 2px) rotate(45deg);
+                    }
+
+                    &:nth-child(2) {
+                        transform: translate(0px, 2px) rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .hide.active {
+            display: none;
+    }
+
+    .hide-thank {
+        display: none;
+
+        &.active {
+            display: flex;
+        }
+    }
+}
